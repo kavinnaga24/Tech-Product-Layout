@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+<style>
+  
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #DC9AF2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.form-container {
+    width: 380px;
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.input-group input:focus {
+    border-color: #13B82E;
+    outline: none;
+    box-shadow: 0 0 5px rgba(19,184,46,0.5);
+}
+
+.password-field {
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #13B82E;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0f8f26;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.switch-text a {
+    color: #DC9AF2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <form id="registerForm" class="form-box">
+        <h2>Create Account</h2>
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="fullname" required>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="regEmail" required>
+            <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="input-group password-field">
+            <label>Password</label>
+            <input type="password" id="regPassword" required>
+            <span class="toggle" onclick="togglePassword('regPassword', this)"></span>
+        </div>
+
+        <div class="input-group password-field">
+            <label>Confirm Password</label>
+            <input type="password" id="regConfirmPassword" required>
+            <span class="toggle" onclick="togglePassword('regConfirmPassword', this)"></span>
+            <small class="error" id="passwordError"></small>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+
+        <p class="switch-text">Already have an account? 
+            <a href="login.html" onclick="showLogin()">Login</a>
+        </p>
+    </form>
+
+    <form id="loginForm" class="form-box hidden">
+        <h2>Login</h2>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" required>
+        </div>
+
+        <div class="input-group password-field">
+            <label>Password</label>
+            <input type="password" id="loginPassword" required>
+            <span class="toggle" onclick="togglePassword('loginPassword', this)">👁️</span>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <p class="switch-text">Don't have an account?
+            <a href="register.html" onclick="showRegister()">Register</a>
+        </p>
+    </form>
+
+</div>
+
+
+</body>
+</html>
